@@ -1,1 +1,91 @@
-idea-generator
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Idea Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    #ideaBox {
+      background: #e7ffe7;
+      padding: 15px;
+      border-radius: 10px;
+      min-height: 60px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      border: 1px solid #b4e9b4;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    button:hover { background: #45a049; }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>✨ Trình tạo ý tưởng ✨</h2>
+
+    <div id="ideaBox">Nhấn nút để tạo ý tưởng mới...</div>
+
+    <button onclick="generateIdea()">Tạo Idea Mới</button>
+
+    <h3>📝 Ghi chú lại ý tưởng quan trọng</h3>
+    <textarea id="notes" placeholder="Viết ghi chú của bạn ở đây..."></textarea>
+  </div>
+
+  <script>
+    const ideas = [
+      "Làm app ghi chú thông minh bằng AI",
+      "Thiết kế hệ thống tưới nước tự động dùng cảm biến",
+      "Trang web chia sẻ mẹo học nhanh",
+      "Thiết kế robot mini phục vụ bàn",
+      "Ứng dụng theo dõi cảm xúc mỗi ngày",
+      "Web bán cây cảnh có AR thử cây trong nhà",
+      "Thiết kế thiết bị chống trộm dùng camera AI",
+      "Làm hệ thống nhận diện biển số xe cho bãi giữ xe",
+      "Game nhỏ luyện phản xạ trong 7 ngày",
+      "Web gợi ý ý tưởng startup ngẫu nhiên",
+    ];
+
+    function generateIdea() {
+      const idea = ideas[Math.floor(Math.random() * ideas.length)];
+      document.getElementById("ideaBox").innerText = idea;
+    }
+  </script>
+</body>
+</html>
